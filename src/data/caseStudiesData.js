@@ -1,0 +1,166 @@
+export const caseStudies = [
+  {
+    id: "codentra-saas-live",
+    title: "Codentra SaaS Platform",
+    subtitle: "Live Cloud Workflow Automation Platform",
+    category: "SaaS Platform",
+    filterCategory: "saas",
+    liveUrl: "https://codentrasaasproject.netlify.app/",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    client: "Codentra SaaS Client",
+    role: "Full-Stack SaaS Architecture, Next.js UI & API Integration",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "ASP.NET / Python"],
+    shortDesc: "A modern live SaaS platform designed to streamline digital workflows through a scalable and user-friendly interface.",
+    problem:
+      "Digital operations teams were experiencing fragmented workflows and lack of real-time operational visibility.",
+    solution:
+      "Codentra designed, built, and deployed a live cloud SaaS platform featuring collaborative workspaces and responsive analytics.",
+    keyFeatures: [
+      "Live Production SaaS Web Platform",
+      "Real-time Collaborative Workspace & Board Views",
+      "Automated Report Generation & Export Engines",
+      "Role-Based Access Control (RBAC) Security",
+    ],
+    results: [
+      { metric: "LIVE", label: "Production App Deployed" },
+      { metric: "<35ms", label: "API Response Latency" },
+      { metric: "99.99%", label: "Cloud SLA Uptime" },
+    ],
+    badge: "Live SaaS App 🚀",
+  },
+  {
+    id: "atif-portfolio-live",
+    title: "Muhammad Atif Portfolio",
+    subtitle: "Modern Full-Stack Developer Web Application",
+    category: "Web Development",
+    filterCategory: "web",
+    liveUrl: "https://muhammadatifse.netlify.app/",
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1200&q=80",
+    client: "Muhammad Atif",
+    role: "UI/UX Design, React Frontend & Performance Optimization",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    shortDesc: "A high-performance web application showcasing full-stack software development projects and modern digital experiences.",
+    problem:
+      "Needed a modern, high-converting digital platform to present software engineering projects and attract global software clients.",
+    solution:
+      "Codentra engineered a lightning-fast responsive React web application with modern typography, smooth micro-animations, and direct intake forms.",
+    keyFeatures: [
+      "Live Production Web Application Deployed on Netlify",
+      "100% Mobile Responsive Across Devices",
+      "Custom Micro-Animations & Dark Mode Styling",
+      "Direct Lead Intake & Contact System",
+    ],
+    results: [
+      { metric: "LIVE", label: "Production Deployed" },
+      { metric: "100%", label: "Mobile Responsive" },
+      { metric: "<25ms", label: "Page Speed Response" },
+    ],
+    badge: "Live Web App 🚀",
+  },
+  {
+    id: "pydata-ai-engine",
+    title: "PyData Intelligence Engine",
+    subtitle: "Python FastAPI & AI Predictive Analytics System",
+    category: "Python & AI",
+    filterCategory: "python",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    client: "DataPulse Analytics",
+    role: "Python Engineering, Machine Learning Pipeline & API Architecture",
+    techStack: ["Python 3.12", "FastAPI", "Pandas", "PyTorch", "PostgreSQL", "Docker"],
+    shortDesc: "High-performance Python machine learning pipeline and FastAPI backend delivering real-time predictive business insights.",
+    problem:
+      "Enterprise data analysts required automated predictive forecasting models without manual ETL lag.",
+    solution:
+      "We engineered a scalable Python FastAPI backend with async task queues and custom machine learning models.",
+    keyFeatures: [
+      "Async FastAPI Endpoint Architecture",
+      "Custom Predictive Machine Learning Models",
+      "Containerized Microservice Deployment",
+    ],
+    results: [
+      { metric: "99.4%", label: "Model Forecast Accuracy" },
+      { metric: "10M+", label: "Daily Data Rows" },
+      { metric: "<10ms", label: "Inference Latency" },
+    ],
+    badge: "Python & AI 🐍",
+  },
+  {
+    id: "pyautomation-bot-network",
+    title: "PyAutomation Scraping Engine",
+    subtitle: "Python Distributed Automation & Scraper Network",
+    category: "Python & Automation",
+    filterCategory: "python",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+    client: "Global Market Telemetry",
+    role: "Python Bot Architecture, Celery Queue & Data Scraping",
+    techStack: ["Python", "FastAPI", "Scrapy", "Celery", "Redis", "PostgreSQL"],
+    shortDesc: "Distributed Python web scraper and ETL automation pipeline extracting market intelligence from 50+ data sources.",
+    problem:
+      "Manual competitor price tracking was taking over 30 hours per week.",
+    solution:
+      "Codentra built a distributed Python scraping grid with Celery worker queues and Redis caching.",
+    keyFeatures: [
+      "Distributed Scrapy Bot Cluster",
+      "Celery & Redis Asynchronous Queues",
+      "Real-Time Slack Alert Notifications",
+    ],
+    results: [
+      { metric: "500k", label: "Daily Data Extractions" },
+      { metric: "0%", label: "Data Loss" },
+      { metric: "100%", label: "Automated Execution" },
+    ],
+    badge: "Python Bot 🤖",
+  },
+  {
+    id: "apex-cloud-saas",
+    title: "ApexCloud Workflow SaaS",
+    subtitle: "Enterprise Workflow Automation Platform",
+    category: "SaaS Platform",
+    filterCategory: "saas",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    client: "Apex Global Tech",
+    role: "Full-Stack Architecture, UI/UX Design, Development & QA",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "ASP.NET Core", "PostgreSQL"],
+    shortDesc: "Enterprise SaaS platform engineered to automate internal business reporting.",
+    problem:
+      "Enterprise teams relied on fragmented spreadsheets causing weekly delays.",
+    solution:
+      "Codentra engineered a unified cloud platform featuring real-time collaborative workspaces.",
+    keyFeatures: [
+      "Real-time Collaborative Board Views",
+      "Automated PDF & Excel Export Engines",
+    ],
+    results: [
+      { metric: "140%", label: "Increase in Throughput" },
+      { metric: "<40ms", label: "Average Response Time" },
+      { metric: "99.99%", label: "Cloud SLA Uptime" },
+    ],
+    badge: "Enterprise SaaS",
+  },
+  {
+    id: "nexus-commerce-hub",
+    title: "Nexus B2B Supply Portal",
+    subtitle: "B2B Commerce & Order Fulfillment",
+    category: "Web Development",
+    filterCategory: "web",
+    image: "https://images.unsplash.com/photo-1556742049-0a67d577c4d3?auto=format&fit=crop&w=1200&q=80",
+    client: "Nexus Distribution",
+    role: "Full-Stack Web Development & QA Verification",
+    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "REST APIs", "Stripe API"],
+    shortDesc: "Custom B2B e-commerce platform empowering wholesale buyers to place bulk orders.",
+    problem:
+      "Manual phone and email order processing led to inventory mismatches.",
+    solution:
+      "Codentra launched a self-service B2B portal integrated directly with ERP.",
+    keyFeatures: [
+      "Custom Bulk Pricing Calculator",
+      "Real-Time ERP Stock Integration",
+    ],
+    results: [
+      { metric: "65%", label: "Less Manual Entry" },
+      { metric: "$2.4M", label: "Quarterly Volume" },
+      { metric: "98%", label: "Customer Score" },
+    ],
+    badge: "B2B Portal",
+  },
+];
