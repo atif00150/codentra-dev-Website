@@ -1,17 +1,17 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import TechStackTicker from "../components/TechStackTicker";
-import ServicesSection from "../components/ServicesSection";
-import CaseStudiesSection from "../components/CaseStudiesSection";
-import ProcessSection from "../components/ProcessSection";
-import WhyCodentra from "../components/WhyCodentra";
-import ContactSection from "../components/ContactSection";
-import Footer from "../components/Footer";
+import Navbar from "../Components/Navbar";
+import Hero from "../Components/Hero";
+import TechStackTicker from "../Components/TechStackTicker";
+import ServicesSection from "../Components/ServicesSection";
+import CaseStudiesSection from "../Components/CaseStudiesSection";
+import ProcessSection from "../Components/ProcessSection";
+import WhyCodentra from "../Components/WhyCodentra";
+import ContactSection from "../Components/ContactSection";
+import Footer from "../Components/Footer";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#09090B] text-zinc-100 selection:bg-[#A3E635] selection:text-zinc-950">
+    <div className="min-h-screen bg-white text-[#09090B] selection:bg-[#A3E635] selection:text-[#09090B]">
       <Navbar />
       <main>
         <Hero />
