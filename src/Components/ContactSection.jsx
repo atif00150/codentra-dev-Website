@@ -7,6 +7,7 @@ import {
   Clock,
   DollarSign,
   Briefcase,
+  ExternalLink,
 } from "lucide-react";
 import {
   LinkedinIcon,
@@ -19,11 +20,10 @@ export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
     projectType: "Web Development",
     budget: "$5,000 - $10,000",
-    description: "",
     timeline: "1 - 2 Months",
+    description: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -52,13 +52,53 @@ export default function ContactSection() {
     "3+ Months",
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+
+    try {
+      // Direct FormSubmit Email Service API POST Request to atifmughal00150@gmail.com
+      const response = await fetch("https://formsubmit.co/ajax/atifmughal00150@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `🚀 New Project Inquiry from ${formData.name} (Codentra.dev)`,
+          Name: formData.name,
+          Email: formData.email,
+          "Service Type": formData.projectType,
+          Budget: formData.budget,
+          Timeline: formData.timeline,
+          Message: formData.description,
+          _captcha: "false",
+        }),
+      });
+
+      if (response.ok) {
+        setLoading(false);
+        setSubmitted(true);
+      } else {
+        // Fallback to direct mailto compose link if offline
+        window.location.href = `mailto:atifmughal00150@gmail.com?subject=${encodeURIComponent(
+          `Project Inquiry from ${formData.name}`
+        )}&body=${encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\nService: ${formData.projectType}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline}\n\nProject Details:\n${formData.description}`
+        )}`;
+        setLoading(false);
+        setSubmitted(true);
+      }
+    } catch (err) {
+      // Fallback mailto compose
+      window.location.href = `mailto:atifmughal00150@gmail.com?subject=${encodeURIComponent(
+        `Project Inquiry from ${formData.name}`
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nService: ${formData.projectType}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline}\n\nProject Details:\n${formData.description}`
+      )}`;
       setLoading(false);
       setSubmitted(true);
-    }, 850);
+    }
   };
 
   return (
@@ -85,7 +125,7 @@ export default function ContactSection() {
               </p>
             </div>
 
-            {/* Direct Contact Badges (WhatsApp & Email) */}
+            {/* Direct Contact Badges (WhatsApp & Direct Mail Compose) */}
             <div className="space-y-2.5 pt-2.5 border-t border-zinc-800">
               <a
                 href="https://wa.me/923111783631"
@@ -104,15 +144,22 @@ export default function ContactSection() {
                 </div>
               </a>
 
+              {/* Direct Mail Compose Link */}
               <a
-                href="mailto:atifmughal00150@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=atifmughal00150@gmail.com&su=New%20Project%20Inquiry%20-%20Codentra.dev"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 p-3 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-[#A3E635] transition-colors group"
+                title="Click to open Email Compose Window"
               >
                 <div className="w-8 h-8 rounded-xl bg-zinc-800 flex items-center justify-center text-[#A3E635] group-hover:bg-[#A3E635] group-hover:text-[#09090B] transition-colors">
                   <Mail className="w-3.5 h-3.5" />
                 </div>
-                <div>
-                  <span className="text-[9px] text-zinc-400 block font-mono uppercase">Direct Email</span>
+                <div className="flex-1">
+                  <span className="text-[9px] text-zinc-400 block font-mono uppercase flex items-center gap-1">
+                    <span>Direct Email (Click to Compose)</span>
+                    <ExternalLink className="w-2.5 h-2.5 text-[#A3E635]" />
+                  </span>
                   <span className="text-xs font-bold text-white group-hover:text-[#A3E635] transition-colors">
                     atifmughal00150@gmail.com
                   </span>
@@ -120,7 +167,7 @@ export default function ContactSection() {
               </a>
             </div>
 
-            {/* Official Codentra Social Links */}
+            {/* Official Codentra.dev Social Links */}
             <div>
               <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase tracking-widest block mb-2">
                 Official Social Channels
@@ -162,7 +209,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Right Column: Compact "Start a Project" Form */}
+          {/* Right Column: Direct Email Delivery "Start a Project" Form */}
           <div className="lg:col-span-7">
             <div className="card-obsidian-dark p-5 rounded-3xl border border-zinc-800 bg-zinc-900/95 shadow-xl relative">
               {submitted ? (
@@ -171,10 +218,10 @@ export default function ContactSection() {
                     <CheckCircle2 className="w-5 h-5" />
                   </div>
                   <h3 className="text-lg font-extrabold text-white">
-                    Project Proposal Received!
+                    Inquiry Sent Directly To Atif Mughal!
                   </h3>
                   <p className="text-zinc-300 text-xs max-w-md mx-auto leading-relaxed">
-                    Thank you <span className="text-[#A3E635] font-bold">{formData.name}</span>. Our software architect will review your request and reach out within 24 hours.
+                    Thank you <span className="text-[#A3E635] font-bold">{formData.name}</span>. Your inquiry has been sent directly to <span className="font-mono text-white">atifmughal00150@gmail.com</span>. We will get back to you within 24 hours.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -192,6 +239,7 @@ export default function ContactSection() {
                       </label>
                       <input
                         type="text"
+                        name="name"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -206,6 +254,7 @@ export default function ContactSection() {
                       </label>
                       <input
                         type="email"
+                        name="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -293,12 +342,12 @@ export default function ContactSection() {
                   >
                     {loading ? (
                       <span className="flex items-center gap-1.5">
-                        <span className="w-3 h-3 border-2 border-[#09090B] border-t-transparent rounded-full animate-spin" />
-                        <span>Submitting...</span>
+                        <span className="w-3 h-3 border-2 border-[#09090B] border-[#A3E635] border-t-transparent rounded-full animate-spin" />
+                        <span>Sending to atifmughal00150@gmail.com...</span>
                       </span>
                     ) : (
                       <>
-                        <span>Let's Talk About Your Project</span>
+                        <span>Submit Inquiry (Direct Email Delivery)</span>
                         <Send className="w-3.5 h-3.5" />
                       </>
                     )}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CodentraLogo from "./CodentraLogo";
-import { ArrowUp, Copy, Check, Mail } from "lucide-react";
+import { ArrowUp, Copy, Check, Mail, ExternalLink } from "lucide-react";
 import {
   LinkedinIcon,
   InstagramIcon,
@@ -95,10 +95,13 @@ export default function Footer() {
               </span>
             </a>
 
-            {/* Email Copy Box */}
+            {/* Direct Email Compose Window Link */}
             <a
-              href="mailto:atifmughal00150@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=atifmughal00150@gmail.com&su=Project%20Inquiry%20-%20Codentra.dev"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-white hover:border-[#A3E635] transition-colors group"
+              title="Click to Compose Email directly in Gmail"
             >
               <Mail className="w-4 h-4 text-[#A3E635]" />
               <span className="font-mono flex-1 group-hover:text-[#A3E635] transition-colors">
